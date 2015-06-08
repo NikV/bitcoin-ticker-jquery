@@ -1,3 +1,3 @@
 # bitcoin-ticker-jquery
 
-A jQuery plugin that does some bitcoin to currency conversions for you. 
+A jQuery plugin that does some bitcoin to currency conversions for you into three different currencies.
