@@ -9,3 +9,8 @@ Example:
     });
 });
 `
+
+Currency options: 
+- GBP
+- EUR
+- USD
