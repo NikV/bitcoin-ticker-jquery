@@ -27,28 +27,22 @@
                 url: "http://api.coindesk.com/v1/bpi/currentprice.json",
                 dataType: 'json',
                 success: function(results){
+                    var settingsCurrency = settings.currency;
 
-                    // U.S. Dollar
-                    if ( settings.currency == "USD") {
-                        var status = results.bpi.USD.rate;
-                        $($this).append('USD: $' + status);
-
-                    }
-
-                    // British Pound
-                    if ( settings.currency == "GBP") {
-                        var status = results.bpi.GBP.rate;
-                        $($this).append('GBP: £' + status);
-
-                    }
-
-                    // Euro currency
-                    if ( settings.currency == "EUR") {
-                        var status = results.bpi.EUR.rate;
-                        $($this).append('EUR: €' + status);
+                    switch (settingsCurrency) {
+                        case "GBP":
+                            var status = results.bpi.GBP.rate;
+                            $($this).append('GBP: £' + status);
+                            break;
+                        case "EUR":
+                            var status = results.bpi.EUR.rate;
+                            $($this).append('EUR: €' + status);
+                            break;
+                        default:
+                            var status = results.bpi.USD.rate;
+                            $($this).append('USD: $' + status);
 
                     }
-
 
 
                 }
@@ -75,4 +69,3 @@ jQuery(document).ready( function() {
 });
 
  */
-
